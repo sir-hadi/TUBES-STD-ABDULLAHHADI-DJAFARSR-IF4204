@@ -47,6 +47,8 @@ void printFac(University &U)
             P = nextFac(P);
         }
         while(P != NULL);
+    }else{
+    cout<<"<EMPTY>";
     }
 };
 
@@ -83,7 +85,7 @@ void insertAfterFac(University &U,adrFac Prec,adrFac P)
         }
         else
         {
-            insertFirstFac(U,P);
+            insertLastFac(U,P);
         }
     }
 };
@@ -107,24 +109,27 @@ void insertLastFac(University &U, adrFac P)
 
 };
 
-void deleteFirstFac(University &U, adrFac &P)
+adrFac deleteFirstFac(University &U)
 {
     if(firstFac(U) != NULL)
     {
-        P = firstFac(U);
+        adrFac P = firstFac(U);
         if (firstFac(U) != lastFac(U))
         {
 
             firstFac(U) = nextFac(P);
             prevFac(firstFac(U)) = NULL;
             nextFac(P) = NULL;
+            return P;
         }
         else
         {
             firstFac(U) = NULL;
             lastFac(U) = NULL;
+            return P;
         }
     }
+    return NULL;
 };
 
 adrFac deleteAfterFac(University &U, adrFac Prec)
@@ -142,13 +147,13 @@ adrFac deleteAfterFac(University &U, adrFac Prec)
         }
         else
         {
-            deleteLasrFac(U);
+            deleteLastFac(U);
         }
     }
     return NULL;
 };
 
-adrFac deleteLasrFac(University &U)
+adrFac deleteLastFac(University &U)
 {
     if (lastFac(U) != NULL)
     {

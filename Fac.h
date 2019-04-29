@@ -43,9 +43,9 @@ adrFac FindFacName(University U, string x);
 //second wave ADH
 void insertAfterFac(University &U, adrFac Prec, adrFac P);
 void insertLastFac(University &U, adrFac P);
-void deleteFirstFac(University &U, adrFac &P);
+adrFac deleteFirstFac(University &U);
 adrFac deleteAfterFac(University &U, adrFac Prec);
-adrFac deleteLasrFac(University &U);
+adrFac deleteLastFac(University &U);
 adrFac FindFacID(University &U, string ID);
 
 
