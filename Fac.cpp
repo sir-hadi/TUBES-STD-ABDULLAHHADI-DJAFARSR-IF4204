@@ -77,27 +77,32 @@ void insertLastFac(University &U, adrFac P){
 		nextFac(lastFac(U)) = P;
 		lastFac(U) = P;
 	}else{
-        insertFirstFac(U,P);
+	    cout<<"test3";
+        firstFac(U) = P;
+        lastFac(U) = P;
 	}
 
 };
 
-adrFac deleteFirstFac(University &U){
+void deleteFirstFac(University &U, adrFac &P){
 	if(firstFac(U) != NULL){
-		adrFac P = firstFac(U);
+		cout<<"woi";
+		P = firstFac(U);
 		if (firstFac(U) != lastFac(U))
 		{
+            cout<<"woi";
 			firstFac(U) = nextFac(P);
+			cout<<"woi";
 			prevFac(firstFac(U)) = NULL;
+			cout<<"woi";
 			nextFac(P) = NULL;
-			return P;
+			cout<<"woi";
 		}else{
+		    cout<<"jiahahhaha";
 			firstFac(U) = NULL;
 			lastFac(U) = NULL;
-			return P;
 		}
 	}
-	return NULL;
 };
 
 adrFac deleteAfterFac(University &U, adrFac Prec){

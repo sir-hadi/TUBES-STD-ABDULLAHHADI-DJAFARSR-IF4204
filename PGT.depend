@@ -30,36 +30,36 @@
 	<stdlib.h>
 	"FctRel.h"
 
-1556482084 source:c:\git\std-final-task----ahd---dsr\fac.cpp
+1556505540 source:c:\git\std-final-task----ahd---dsr\fac.cpp
 	"Fac.h"
 	"Fct.h"
 	"FctRel.h"
 
-1556481910 c:\git\std-final-task----ahd---dsr\fac.h
+1556503575 c:\git\std-final-task----ahd---dsr\fac.h
 	<iostream>
 	<stdlib.h>
 	"FctRel.h"
 	"Fct.h"
 
-1556481959 c:\git\std-final-task----ahd---dsr\fctrel.h
+1556502104 c:\git\std-final-task----ahd---dsr\fctrel.h
 	<iostream>
 	<stdlib.h>
 	"Fct.h"
-	"Fac.h"
 
-1556467463 c:\git\std-final-task----ahd---dsr\fct.h
+1556502154 c:\git\std-final-task----ahd---dsr\fct.h
 	<iostream>
 	<stdlib.h>
-	"FctRel.h"
 
 1556424244 source:c:\git\std-final-task----ahd---dsr\fct.cpp
 
-1556429004 source:c:\git\std-final-task----ahd---dsr\fctrel.cpp
+1556502018 source:c:\git\std-final-task----ahd---dsr\fctrel.cpp
 	"FctRel.h"
-
-1556480500 source:c:\git\std-final-task----ahd---dsr\main.cpp
-	<iostream>
 	"Fac.h"
 	"Fct.h"
+
+1556505358 source:c:\git\std-final-task----ahd---dsr\main.cpp
+	<iostream>
+	"Fct.h"
 	"FctRel.h"
+	"Fac.h"
 

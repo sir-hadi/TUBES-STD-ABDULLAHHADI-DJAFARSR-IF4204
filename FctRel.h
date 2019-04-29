@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include "Fct.h"
-#include "Fac.h"
+//#include "Fac.h"
 
 using namespace std;
 
