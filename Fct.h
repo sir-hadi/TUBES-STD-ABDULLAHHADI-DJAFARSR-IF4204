@@ -15,7 +15,7 @@ using namespace std;
 #define nextFct(C)  C->nextFct
 #define prevFct(C)	C->lastFct
 
-typedef struct elmFacilities *ardFct;
+typedef struct elmFacilities *adrFct;
 
 struct DataFct
 {
@@ -28,17 +28,19 @@ struct elmFacilities
 {
 
 	DataFct infoFct;
-	ardFct nextFct;
-	ardFct prevFct;
+	adrFct nextFct;
+	adrFct prevFct;
 
 };
 
 struct ListFacilities
 {
-	ardFct firstFct;
-	ardFct lastFct;
+	adrFct firstFct;
+	adrFct lastFct;
 };
 
 //procedur dan fungsi goes down here
+void CreateListFct(ListFacilities &L);
+adrFct AllocateFct(string ,bool Booked);
 
 #endif // FCT_H_INCLUDED

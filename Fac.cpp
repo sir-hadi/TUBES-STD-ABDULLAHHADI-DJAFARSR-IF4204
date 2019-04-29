@@ -192,3 +192,7 @@ adrFac FindFacID(University &U, string ID)
         return NULL;
     }
 };
+
+void deallocateFac(adrFac &P){
+    delete P;
+};

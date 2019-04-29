@@ -47,6 +47,7 @@ adrFac deleteFirstFac(University &U);
 adrFac deleteAfterFac(University &U, adrFac Prec);
 adrFac deleteLastFac(University &U);
 adrFac FindFacID(University &U, string ID);
+void deallocateFac(adrFac &P);
 
 
 

@@ -10,26 +10,31 @@ using namespace std;
 
 #define FctRel(R) R->FctRel
 #define nextFctRel(R) R->nextFctRel
-#define prevFctRel(R) R->prevFctRel
-#define firstFctRel(R) R.firstFctRel
-#define lastFctRel(R) R.lastFctRel
+#define firstFctRel(L) L.firstFctRel
 
 typedef struct elmFctRel *adrFctRel;
 
 struct elmFctRel
 {
-	ardFct FctRel;
+	adrFct FctRel;
 	adrFctRel nextFctRel;
-	adrFctRel prevFctRel;
 };
 
 struct ListFctRel
 {
 	adrFctRel firstFctRel;
-	adrFctRel lastFctRel;
 };
 
 //procedur dan fungsi goes down here
 void CreateListFctRel(ListFctRel &R);
+//1st wave
+adrFctRel AllocateRel(adrFct C);
+void DeallocateRel(adrFctRel R);
+void insertRel(ListFctRel &L, adrFctRel R);
+adrFctRel deleteFirstRel(ListFctRel &L);
+adrFctRel deleteAfterRel(ListFctRel &L, adrFctRel Prec);
+
+
+
 
 #endif // FCTREL_H_INCLUDED

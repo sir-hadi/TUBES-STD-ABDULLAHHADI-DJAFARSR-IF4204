@@ -52,7 +52,6 @@ int main()
     P = deleteLastFac(Telkom);
     P = deleteLastFac(Telkom);
     printFac(Telkom);
-    //cout<<FacName(firstFac(Telkom));
 
 
     return 0;
