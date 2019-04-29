@@ -11,15 +11,39 @@ int main()
 
     University Telkom;
     CreateUniversity(Telkom);
-    adrFac P;
-    insertLastFac(Telkom,Allocate(Telkom,"Informatika","IF"));
-    insertLastFac(Telkom,Allocate(Telkom,"Industri Kreatif","IK"));
-    insertLastFac(Telkom,Allocate(Telkom,"Ilmu Terapan","IT"));
-    insertLastFac(Telkom,Allocate(Telkom,"Teknik Elektrororo","TE"));
-    insertLastFac(Telkom,Allocate(Telkom,"Ekonomi dan Bisnis","EB"));
-    //deleteFirstFac(Telkom, P);
-    cout<<FacName(firstFac(Telkom))<<"pirts"<<endl;
-    cout<<FacName(lastFac(Telkom))<<"pirts"<<endl<<endl;
+    /*
+    adrFac P = Allocate(Telkom,"Informatika","IF");
+    firstFac(Telkom) = P;
+    lastFac(Telkom) = P;
+
     printFac(Telkom);
+    cout<<FacName(firstFac(Telkom))<<" First"<<endl;
+    cout<<FacName(lastFac(Telkom))<<" Last"<<endl<<endl;
+
+    adrFac Q = Allocate(Telkom,"Industri Kreatif","IK");
+
+    nextFac(P) = Q;
+    prevFac(Q) = P;
+    lastFac(Telkom) = Q;
+
+    printFac(Telkom);
+    cout<<FacName(firstFac(Telkom))<<" First"<<endl;
+    cout<<FacName(lastFac(Telkom))<<" Last"<<endl<<endl;
+
+
+    */
+    insertFirstFac(Telkom,Allocate(Telkom,"Informatika","IF"));
+    insertFirstFac(Telkom,Allocate(Telkom,"Industri Kreatif","IK"));
+    insertFirstFac(Telkom,Allocate(Telkom,"Ilmu Terapan","IT"));
+    insertFirstFac(Telkom,Allocate(Telkom,"Teknik Elektrororo","TE"));
+    insertFirstFac(Telkom,Allocate(Telkom,"Ekonomi dan Bisnis","EB"));
+    adrFac P = NULL;
+    deleteFirstFac(Telkom,P);
+    insertAfterFac(Telkom,FindFacID(Telkom,"IT"),P);
+    insertLastFac(Telkom,Allocate(Telkom,"Komunikasi dan Bisnis","KB"));
+    printFac(Telkom);
+    cout<<endl;
+    cout<<FacName(firstFac(Telkom));
+
     return 0;
 }
