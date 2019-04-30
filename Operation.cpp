@@ -11,11 +11,11 @@ void UserInsertFac(University &U){
     cout<<endl<<"ID : ";
     cin>>id;
     adrFac P = AllocateFac(U,nama,id);
-    if(FindFacID(U,id) != NULL)){
+    if(FindFacID(U,id) != NULL){
         deallocateFac(P);
         cout<<"Error : theres another NODE with the same ID";
     }else{
-        inserLastFac(U,P);
+        insertLastFac(U,P);
     }
 };
 //bool ADuplicateFac(University &U, string id);
@@ -27,7 +27,7 @@ void Connect(University &U, ListFacilities L, string idFac, string idFct){
     adrFac Fac = FindFacID(U,idFac);
     adrFct Fct = FindFctID(L,idFct);
     if(Fac == NULL && Fct == NULL){
-        cout<<"Error"
+        cout<<"Error";
     }
 };
 void CekConnection(University U, ListFacilities L, string idFac, string idFct);

@@ -9,25 +9,26 @@
 using namespace std;
 
 #define firstFct(C)	C.firstFct
-#define lastFct(C)	C.astFct
-#define infoFct(C)  C->infoFct
-#define IDFct(C)	C->IDFct
-#define nextFct(C)  C->nextFct
-#define prevFct(C)	C->lastFct
-
-typedef struct elmFacilities *adrFct;
+#define lastFct(C)	C.lastFct
+#define infoFct(P)  P->infoFct
+#define nextFct(P)  P->nextFct
+#define prevFct(P)	P->prevFct
 
 struct DataFct
 {
+    string IDFct;
 	string FctName;
 	bool IsBooked;
 	string DataPenyewa;
 };
 
+typedef DataFct infotype;
+typedef struct elmFacilities *adrFct;
+
 struct elmFacilities
 {
 
-	DataFct infoFct;
+	infotype infoFct;
 	adrFct nextFct;
 	adrFct prevFct;
 
@@ -41,6 +42,16 @@ struct ListFacilities
 
 //procedur dan fungsi goes down here
 void CreateListFct(ListFacilities &L);
-adrFct AllocateFct(string ,bool Booked);
+adrFct AllocateFct(infotype X);
+void insertFirstFct(ListFacilities &C, adrFct P);
+void printFct(ListFacilities &C);
+adrFct FindFctName(ListFacilities C, string x);
+
+void insertAfterFct(ListFacilities &C, adrFct Prec, adrFct P);
+void insertLastFct(ListFacilities &C, adrFct P);
+adrFct deleteFirstFct(ListFacilities &C);
+adrFct deleteAfterFct(ListFacilities &C, adrFct Prec);
+adrFct deleteLastFct(ListFacilities &C);
+adrFct FindFctID(ListFacilities &C, string ID);
 
 #endif // FCT_H_INCLUDED
