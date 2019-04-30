@@ -305,13 +305,18 @@ void mainMenu(){
             break;
         }
         case 8:
-            deleteFctChoice(C);
+            //deleteFctChoice(C);
+            DeleteFct(Telkom,C);
             break;
         case 9:
-            deleteFacChoice(Telkom);
+            //deleteFacChoice(Telkom);
+            DeleteFac(Telkom,C);
             break;
         case 10:
             BookARoom(C);
+            break;
+        case 11:
+            ShowAvailable(Telkom,C);
             break;
         case 0:
             cout<<"Thank You!\n\n";

@@ -266,10 +266,13 @@ void ShowAvailable(University U,ListFacilities &L){
         {
             while(R != NULL)
                 {
-                    if(!(infoFct(FctRel(R)).IsBooked))
+                    if(!(infoFct(FctRel(R)).IsBooked)){
                     ++j;
                     cout<<" "<<j<<". "<<infoFct(FctRel(R)).FctName<<endl;
                     cout<<"  "<<infoFct(FctRel(R)).IDFct<<endl;
+                    }
+                    R=nextFctRel(R);
+
                 }
         }
         else
