@@ -158,7 +158,15 @@ void PrintFctOfFac(University U, ListFacilities L, string id){
     }
 };
 
-void DeleteFct(University &U, ListFacilities &L);
-void DeleteFac(University &U, ListFacilities &L);
-void ShowAvailable(University U,ListFacilities &L);
-void BookARoom(University U, ListFacilities &L);
+void DeleteFct(University &U, ListFacilities &L){
+    cout<<"test";
+};
+void DeleteFac(University &U, ListFacilities &L){
+    cout<<"test";
+};
+void ShowAvailable(University U,ListFacilities &L){
+    cout<<"test";
+};
+void BookARoom(University U, ListFacilities &L){
+    cout<<"test";
+};
