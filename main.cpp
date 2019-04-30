@@ -4,6 +4,7 @@
 #include "Fac.h"
 #include "Operation.h"
 
+
 University Telkom;
 ListFacilities C;
 
@@ -294,8 +295,13 @@ void mainMenu(){
             PrintAll(Telkom,C);
             break;
         case 7:
-            PrintFctOfFac(Telkom,C);
+        {
+            string id;
+            cout<<"\nInsert Faculty's ID\t\t: ";
+            cin>>id;
+            PrintFctOfFac(Telkom,C,id);
             break;
+        }
         case 8:
             deleteFctChoice(C);
             break;
@@ -303,7 +309,7 @@ void mainMenu(){
             deleteFacChoice(Telkom);
             break;
         case 10:
-            BookAFct(Telkom,C);
+            BookARoom(Telkom,C);
             break;
         case 0:
             cout<<"Thank You!\n\n";
