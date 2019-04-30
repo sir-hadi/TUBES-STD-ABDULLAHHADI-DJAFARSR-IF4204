@@ -114,3 +114,41 @@
 	"Fac.h"
 	"Operation.h"
 
+1556630071 source:c:\users\asus\documents\github\tubes-std-abdullahhadi-djafarsr-if4204\fac.cpp
+	"Fac.h"
+	"Fct.h"
+	"FctRel.h"
+
+1556630071 c:\users\asus\documents\github\tubes-std-abdullahhadi-djafarsr-if4204\fac.h
+	<iostream>
+	<stdlib.h>
+	"FctRel.h"
+
+1556630071 c:\users\asus\documents\github\tubes-std-abdullahhadi-djafarsr-if4204\fctrel.h
+	<iostream>
+	<stdlib.h>
+	"Fct.h"
+
+1556630071 c:\users\asus\documents\github\tubes-std-abdullahhadi-djafarsr-if4204\fct.h
+	<iostream>
+	<stdlib.h>
+
+1556630071 source:c:\users\asus\documents\github\tubes-std-abdullahhadi-djafarsr-if4204\fct.cpp
+	"Fct.h"
+
+1556630071 source:c:\users\asus\documents\github\tubes-std-abdullahhadi-djafarsr-if4204\fctrel.cpp
+	"FctRel.h"
+	"Fac.h"
+	"Fct.h"
+
+1556630071 source:c:\users\asus\documents\github\tubes-std-abdullahhadi-djafarsr-if4204\operation.cpp
+	"Fct.h"
+	"FctRel.h"
+	"Fac.h"
+	"Operation.h"
+
+1556630071 c:\users\asus\documents\github\tubes-std-abdullahhadi-djafarsr-if4204\operation.h
+	"Fac.h"
+	"Fct.h"
+	"FctRel.h"
+
