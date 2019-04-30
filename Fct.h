@@ -53,5 +53,6 @@ adrFct deleteFirstFct(ListFacilities &C);
 adrFct deleteAfterFct(ListFacilities &C, adrFct Prec);
 adrFct deleteLastFct(ListFacilities &C);
 adrFct FindFctID(ListFacilities &C, string ID);
+void deallocateFct(adrFct &C);
 
 #endif // FCT_H_INCLUDED

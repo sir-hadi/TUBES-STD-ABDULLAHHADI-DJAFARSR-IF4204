@@ -38,6 +38,8 @@
 		<Unit filename="Fct.h" />
 		<Unit filename="FctRel.cpp" />
 		<Unit filename="FctRel.h" />
+		<Unit filename="Operation.cpp" />
+		<Unit filename="Operation.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

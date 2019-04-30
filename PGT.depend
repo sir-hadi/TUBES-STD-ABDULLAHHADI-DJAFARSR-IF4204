@@ -45,11 +45,11 @@
 	<stdlib.h>
 	"Fct.h"
 
-1556633620 c:\git\std-final-task----ahd---dsr\fct.h
+1556640718 c:\git\std-final-task----ahd---dsr\fct.h
 	<iostream>
 	<stdlib.h>
 
-1556633620 source:c:\git\std-final-task----ahd---dsr\fct.cpp
+1556640717 source:c:\git\std-final-task----ahd---dsr\fct.cpp
 	"Fct.h"
 
 1556633620 source:c:\git\std-final-task----ahd---dsr\fctrel.cpp
@@ -57,14 +57,14 @@
 	"Fac.h"
 	"Fct.h"
 
-1556638193 source:c:\git\std-final-task----ahd---dsr\main.cpp
+1556642046 source:c:\git\std-final-task----ahd---dsr\main.cpp
 	<iostream>
 	"Fct.h"
 	"FctRel.h"
 	"Fac.h"
 	"Operation.h"
 
-1556638179 c:\git\std-final-task----ahd---dsr\operation.h
+1556642046 c:\git\std-final-task----ahd---dsr\operation.h
 	"Fac.h"
 	"Fct.h"
 	"FctRel.h"
@@ -152,7 +152,7 @@
 	"Fct.h"
 	"FctRel.h"
 
-1556638179 source:c:\git\std-final-task----ahd---dsr\operation.cpp
+1556641941 source:c:\git\std-final-task----ahd---dsr\operation.cpp
 	"Fct.h"
 	"FctRel.h"
 	"Fac.h"

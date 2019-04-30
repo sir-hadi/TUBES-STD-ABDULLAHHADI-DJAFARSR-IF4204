@@ -267,7 +267,7 @@ void mainMenu(){
             cin>>facID;
             cout<<"\nFacility's ID\t\t: ";
             cin>>fctID;
-            Connect(Telkom,C,facID,fctID);
+            Link(Telkom,C,facID,fctID);
             break;
         }
         case 4:
@@ -309,7 +309,7 @@ void mainMenu(){
             deleteFacChoice(Telkom);
             break;
         case 10:
-            BookARoom(Telkom,C);
+            BookARoom(C);
             break;
         case 0:
             cout<<"Thank You!\n\n";

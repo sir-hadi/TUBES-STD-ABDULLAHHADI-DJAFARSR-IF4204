@@ -18,12 +18,34 @@ void UserInsertFac(University &U){
         insertLastFac(U,P);
     }
 };
-//bool ADuplicateFac(University &U, string id);
-void UserInsertFct(ListFacilities &L){
 
+void UserInsertFct(ListFacilities &L){
+    infotype x;
+    string trig;
+    cout<<"ID : ";
+    cin>>x.IDFct;
+    cout<<endl<<"Name : ";
+    cin>>x.FctName;
+    cout<<endl<<"Is the Booked ? [y/n]";
+    cin>>trig;
+    if(trig == "y"){
+        cout<<endl<<"By who : ";
+        cin>>x.DataPenyewa;
+        x.IsBooked = true;
+    }else{
+        x.IsBooked = false;
+        x.DataPenyewa = "-";
+    }
+    adrFct Fct = AllocateFct(x);
+    if(FindFctID(L,infoFct(Fct).IDFct) == NULL){
+        insertLastFct(L,Fct);
+    }else{
+        cout<<endl<<"Error : theres another NODE with the same ID";
+    }
 };
-//bool ADuplicateFct(ListFacilities &L);
-void Connect(University U, ListFacilities &L, string idFac, string idFct){
+
+
+void Link(University &U, ListFacilities L, string idFac, string idFct){
     adrFac Fac = FindFacID(U,idFac);
     adrFct Fct = FindFctID(L,idFct);
     if(Fac == NULL && Fct == NULL){
@@ -34,8 +56,6 @@ void Connect(University U, ListFacilities &L, string idFac, string idFct){
 
     }
 };
-
-//sublim
 
 void CekConnection(University U, ListFacilities L, string idFac, string idFct){
     adrFac Fac = FindFacID(U,idFac);
@@ -159,14 +179,117 @@ void PrintFctOfFac(University U, ListFacilities L, string id){
 };
 
 void DeleteFct(University &U, ListFacilities &L){
-    cout<<"test";
+    string id;
+    cout<<"ID : ";
+    cin>>id;
+    adrFct Fct = FindFctID(L,id);
+    if(Fct != NULL)
+    {
+        adrFac Fac = firstFac(U);
+        while(Fac != NULL)
+        {
+            adrFctRel R = firstFctRel(Facilities(Fac));
+            adrFctRel dump = R;
+            while(R != NULL)
+            {
+                if(FctRel(R) == Fct){
+                    R = nextFctRel(R);
+                    dump = deleteFirstRel(Facilities(Fac));
+                    DeallocateRel(dump);
+                }else if(nextFctRel(R) != NULL && FctRel(nextFctRel(R)) == Fct){
+                    dump = deleteAfterRel(Facilities(Fac),R);
+                    DeallocateRel(dump);
+                }else{
+                    R = nextFctRel(R);
+                }
+            }
+            Fac = nextFac(Fac);
+        }
+
+        if(Fct == firstFct(L)){
+            Fct = deleteFirstFct(L);
+        }else if(Fct == lastFct(L)){
+            Fct = deleteLastFct(L);
+        }else{
+            adrFct prev = prevFct(Fct);
+            Fct = deleteAfterFct(L,prev);
+        }
+        deallocateFct(Fct);
+    }
 };
+
 void DeleteFac(University &U, ListFacilities &L){
-    cout<<"test";
+    string id;
+    cout<<"ID : ";
+    cin>>id;
+    adrFac Fac = FindFacID(U,id);
+    if(Fac != NULL){
+        adrFctRel R = firstFctRel(Facilities(Fac));
+        adrFctRel dump;
+        while(R != NULL)
+        {
+            dump = R;
+            R = nextFctRel(R);
+            dump = deleteFirstRel(Facilities(Fac));
+            DeallocateRel(dump);
+        }
+        if(Fac == firstFac(U)){
+            Fac = deleteFirstFac(U);
+        }
+        else if(Fac == lastFac(U)){
+            Fac = deleteLastFac(U);
+        }
+        else
+        {
+            adrFac prev = prevFac(Fac);
+            Fac = deleteAfterFac(U,prev);
+        }
+        deallocateFac(Fac);
+    }
 };
 void ShowAvailable(University U,ListFacilities &L){
-    cout<<"test";
+    adrFac P = firstFac(U);
+    adrFctRel R;
+    int i = 0;
+    int j;
+
+    while(P != NULL)
+    {
+        ++i;
+        cout<<i<<"."<<FacName(P)<<" || ID : "<<IDFac(P)<<endl;
+        cout<<"-- Facilities --"<<endl;
+        R = firstFctRel(Facilities(P));
+        j = 0;
+        //Fct print
+        if (R != NULL)
+        {
+            while(R != NULL)
+                {
+                    if(!(infoFct(FctRel(R)).IsBooked))
+                    ++j;
+                    cout<<" "<<j<<". "<<infoFct(FctRel(R)).FctName<<endl;
+                    cout<<"  "<<infoFct(FctRel(R)).IDFct<<endl;
+                }
+        }
+        else
+        {
+            cout<<"<EMPTY>";
+        }
+        P = nextFac(P);
+    }
+    cout<<endl;
 };
-void BookARoom(University U, ListFacilities &L){
-    cout<<"test";
+void BookARoom(ListFacilities &L){
+    string id;
+    cout<<"ID : ";
+    cin>>id;
+    adrFct Fct = FindFctID(L,id);
+    if(Fct != NULL){
+        string name;
+        cout<<endl<<"Insert your Name : ";
+        cin>>name;
+        infoFct(Fct).DataPenyewa = name;
+        infoFct(Fct).IsBooked = true;
+    }
 };
+

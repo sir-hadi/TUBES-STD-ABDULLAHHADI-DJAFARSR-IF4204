@@ -140,3 +140,7 @@ adrFct FindFctID(ListFacilities &C, string ID){
 
     return NULL;
 }
+
+void deallocateFct(adrFct &C){
+    delete C;
+};
