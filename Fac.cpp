@@ -9,7 +9,7 @@ void CreateUniversity(University &U)
     lastFac(U) = NULL;
 };
 
-adrFac Allocate(University &U, string x, string id)
+adrFac AllocateFac(University &U, string x, string id)
 {
     adrFac P = new elmFaculties;
     FacName(P) = x;

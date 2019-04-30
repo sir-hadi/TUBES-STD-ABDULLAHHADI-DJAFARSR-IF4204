@@ -2,6 +2,7 @@
 #include "Fct.h"
 #include "FctRel.h"
 #include "Fac.h"
+#include "Operation.h"
 
 using namespace std;
 
@@ -32,15 +33,15 @@ int main()
 
 
     */
-    insertFirstFac(Telkom,Allocate(Telkom,"Informatika","IF"));
-    insertFirstFac(Telkom,Allocate(Telkom,"Industri Kreatif","IK"));
-    insertFirstFac(Telkom,Allocate(Telkom,"Ilmu Terapan","IT"));
-    insertFirstFac(Telkom,Allocate(Telkom,"Teknik Elektrororo","TE"));
-    insertFirstFac(Telkom,Allocate(Telkom,"Ekonomi dan Bisnis","EB"));
+    insertFirstFac(Telkom,AllocateFac(Telkom,"Informatika","IF"));
+    insertFirstFac(Telkom,AllocateFac(Telkom,"Industri Kreatif","IK"));
+    insertFirstFac(Telkom,AllocateFac(Telkom,"Ilmu Terapan","IT"));
+    insertFirstFac(Telkom,AllocateFac(Telkom,"Teknik Elektrororo","TE"));
+    insertFirstFac(Telkom,AllocateFac(Telkom,"Ekonomi dan Bisnis","EB"));
     adrFac P = NULL;
     P = deleteFirstFac(Telkom);
     insertAfterFac(Telkom,FindFacID(Telkom,"IT"),P);
-    insertLastFac(Telkom,Allocate(Telkom,"Komunikasi dan Bisnis","KB"));
+    insertLastFac(Telkom,AllocateFac(Telkom,"Komunikasi dan Bisnis","KB"));
     printFac(Telkom);
     cout<<endl;
     P = deleteAfterFac(Telkom,FindFacID(Telkom,"IK"));

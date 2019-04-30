@@ -35,7 +35,7 @@ struct University
 
 //first wave ADH
 void CreateUniversity(University &U);
-adrFac Allocate(University &U, string x, string id);
+adrFac AllocateFac(University &U, string x, string id);
 void insertFirstFac(University &U, adrFac P);
 void printFac(University &U);
 adrFac FindFacName(University U, string x);
