@@ -92,17 +92,14 @@ void insertAfterFac(University &U,adrFac Prec,adrFac P)
 
 void insertLastFac(University &U, adrFac P)
 {
-    cout<<"test0";
     if(firstFac(U) != NULL)
     {
-        cout<<"test1";
         prevFac(P) = lastFac(U);
         nextFac(lastFac(U)) = P;
         lastFac(U) = P;
     }
     else
     {
-        cout<<"test3";
         firstFac(U) = P;
         lastFac(U) = P;
     }

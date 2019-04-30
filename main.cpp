@@ -248,16 +248,18 @@ void mainMenu(){
         cin>>choice;
         switch(choice){
         case 1:
-            cout<<"Insert Faculty's Data\n";
-            cout<<"Faculty's ID\t\t: "<<endl;
-            cin>>id;
-            cout<<"Faculty's Name\t\t: "<<endl;
-            cin>>name;
-            insertFacChoice(Telkom,name,id);
+            //cout<<"Insert Faculty's Data\n";
+            //cout<<"Faculty's ID\t\t: "<<endl;
+            //cin>>id;
+            //cout<<"Faculty's Name\t\t: "<<endl;
+            //cin>>name;
+            //insertFacChoice(Telkom,name,id);
+            UserInsertFac(Telkom);
             break;
         case 2:
-            X = createFacilities();
-            insertFctChoice(C,X);
+            //X = createFacilities();
+            //insertFctChoice(C,X);
+            UserInsertFct(C);
             break;
         case 3:
         {

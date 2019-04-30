@@ -10,6 +10,7 @@ void UserInsertFac(University &U){
     cin>>nama;
     cout<<endl<<"ID : ";
     cin>>id;
+    cin.ignore();
     adrFac P = AllocateFac(U,nama,id);
     if(FindFacID(U,id) != NULL){
         deallocateFac(P);
