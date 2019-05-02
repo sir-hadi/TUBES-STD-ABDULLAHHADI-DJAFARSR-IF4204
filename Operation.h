@@ -7,17 +7,17 @@
 
 using namespace std;
 
-void UserInsertFac(University &U);
-void UserInsertFct(ListFacilities &L);
-void Link(University &U, ListFacilities L, string idFac, string idFct);
-void CekConnection(University U, ListFacilities L, string idFac, string idFct);
-void Disconnect(University &U, ListFacilities L, string idFac, string idFct);
-void PrintAll(University U, ListFacilities L);
-void PrintFctOfFac(University U, ListFacilities L, string id);
-void DeleteFct(University &U, ListFacilities &L);
-void DeleteFac(University &U, ListFacilities &L);
-void ShowAvailable(University U,ListFacilities &L);
-void BookARoom(ListFacilities &L);
+void UserInsertFac(University &U);// hadi
+void UserInsertFct(ListFacilities &L);// hadi
+void Link(University &U, ListFacilities L, string idFac, string idFct);//hadi
+bool CekConnection(University U, ListFacilities L, string idFac, string idFct);//hadi
+void Disconnect(University &U, ListFacilities L, string idFac, string idFct);//djafar
+void PrintAll(University U, ListFacilities L);//djafar
+void PrintFctOfFac(University U, ListFacilities L, string id);//djafar
+void DeleteFct(University &U, ListFacilities &L);//Djafar and Hadi
+void DeleteFac(University &U, ListFacilities &L);//Djafar and Hadi
+void ShowAvailable(University U,ListFacilities &L);//djafar
+void BookARoom(ListFacilities &L);//hadi
 
 
 

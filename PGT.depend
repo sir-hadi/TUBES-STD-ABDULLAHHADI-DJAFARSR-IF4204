@@ -57,14 +57,14 @@
 	"Fac.h"
 	"Fct.h"
 
-1556645022 source:c:\git\std-final-task----ahd---dsr\main.cpp
+1556764891 source:c:\git\std-final-task----ahd---dsr\main.cpp
 	<iostream>
 	"Fct.h"
 	"FctRel.h"
 	"Fac.h"
 	"Operation.h"
 
-1556642046 c:\git\std-final-task----ahd---dsr\operation.h
+1556786574 c:\git\std-final-task----ahd---dsr\operation.h
 	"Fac.h"
 	"Fct.h"
 	"FctRel.h"
@@ -152,7 +152,7 @@
 	"Fct.h"
 	"FctRel.h"
 
-1556643914 source:c:\git\std-final-task----ahd---dsr\operation.cpp
+1556765586 source:c:\git\std-final-task----ahd---dsr\operation.cpp
 	"Fct.h"
 	"FctRel.h"
 	"Fac.h"

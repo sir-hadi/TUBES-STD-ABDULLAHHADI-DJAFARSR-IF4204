@@ -8,21 +8,6 @@
 University Telkom;
 ListFacilities C;
 
-DataFct createFacilities(){
-    DataFct F;
-
-    cout<<"\t\tInsert Data\n";
-    cout<<"\t\t===========";
-    cout<<"\nFacility's ID\t\t: ";
-    cin>>F.IDFct;
-    cout<<"Facility's Name\t\t: ";
-    cin>>F.FctName;
-    F.IsBooked = false;
-    F.DataPenyewa = "-";
-
-    return F;
-}
-
 int insertFctChoice(ListFacilities C, infotype X){
     int iChoice;
     bool menuLoop = true;
@@ -279,7 +264,11 @@ void mainMenu(){
             cin>>facID;
             cout<<"\nInsert Facility's ID\t\t: ";
             cin>>fctID;
-            CekConnection(Telkom,C,facID,fctID);
+            if(CekConnection(Telkom,C,facID,fctID)){
+                cout<<"Connection Found! ";
+            }else{
+                cout<<"Error : Connection does not exist ";
+            }
             break;
         }
         case 5:

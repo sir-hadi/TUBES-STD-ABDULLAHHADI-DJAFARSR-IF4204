@@ -21,58 +21,78 @@ void UserInsertFac(University &U){
 };
 
 void UserInsertFct(ListFacilities &L){
-    infotype x;
-    string trig;
+    DataFct x;
+    char trig;
     cout<<"ID : ";
     cin>>x.IDFct;
-    cout<<endl<<"Name : ";
+    cout<<"Name : ";
     cin>>x.FctName;
-    cout<<endl<<"Is the Booked ? [y/n]";
-    cin>>trig;
-    if(trig == "y"){
-        cout<<endl<<"By who : ";
-        cin>>x.DataPenyewa;
-        x.IsBooked = true;
-    }else{
-        x.IsBooked = false;
-        x.DataPenyewa = "-";
-    }
+    do{
+        cout<<"Is this Booked ? [y/n]";
+        cin>>trig;
+        if(trig == 'y' || trig == 'Y'){
+            cout<<"\nBy who : ";
+            cin>>x.DataPenyewa;
+            x.IsBooked = true;
+        }else if(trig == 'n' || trig == 'N'){
+            x.IsBooked = false;
+            x.DataPenyewa = "-";
+        } else {
+            cout<<"Wrong input!\n\n";
+        }
+    }while(trig!= 'y' && trig != 'Y' && trig != 'n' && trig != 'N');
+
     adrFct Fct = AllocateFct(x);
     if(FindFctID(L,infoFct(Fct).IDFct) == NULL){
         insertLastFct(L,Fct);
     }else{
-        cout<<endl<<"Error : theres another NODE with the same ID";
+        cout<<"\nError : theres another NODE with the same ID";
     }
 };
 
 
 void Link(University &U, ListFacilities L, string idFac, string idFct){
-    adrFac Fac = FindFacID(U,idFac);
-    adrFct Fct = FindFctID(L,idFct);
-    if(Fac == NULL && Fct == NULL){
-        cout<<"Error : Node Not Found";
-    }else{
-        adrFctRel R = AllocateRel(Fct);
-        insertRel(Facilities(Fac),R);
 
+    adrFac P = firstFac(U);
+    bool trig = false;
+    while(P != NULL && !trig){
+        trig = CekConnection(U,L,IDFac(P),idFct);
+        P = nextFac(P);
+    }
+
+    if(!trig){
+        adrFac Fac = FindFacID(U,idFac);
+        adrFct Fct = FindFctID(L,idFct);
+        if(Fac == NULL && Fct == NULL){
+            cout<<"Error : Node Not Found";
+        }else{
+            adrFctRel R = AllocateRel(Fct);
+            insertRel(Facilities(Fac),R);
+
+        }
+    }else{
+        cout<<"Error";
     }
 };
 
-void CekConnection(University U, ListFacilities L, string idFac, string idFct){
+bool CekConnection(University U, ListFacilities L, string idFac, string idFct){
     adrFac Fac = FindFacID(U,idFac);
     adrFct Fct = FindFctID(L,idFct);
     //alone alen walker kekenya yg bener all fal down  lagu
     if(Fac == NULL && Fct == NULL ){
+        return false;
         cout<<"Error : Connection does not exist ";
     }else{
         adrFctRel R = firstFctRel(Facilities(Fac));
         while(R!=NULL){
             if(Fct == FctRel(R));{
+                return true;
                 cout<<"Connection Found! ";
             }
             R = nextFctRel(R);
         }
     }
+    return false;
 };
 
 void Disconnect(University &U, ListFacilities L, string idFac, string idFct){
@@ -122,23 +142,23 @@ void PrintAll(University U, ListFacilities L){
             while(R != NULL)
                 {
                     ++j;
-                    cout<<" "<<j<<". "<<infoFct(FctRel(R)).FctName<<endl;
-                    cout<<"  "<<infoFct(FctRel(R)).IDFct<<endl;
+                    cout<<" "<<j<<". "<<infoFct(FctRel(R)).FctName;
+                    cout<<"\t"<<infoFct(FctRel(R)).IDFct<<endl;
                     if (infoFct(FctRel(R)).IsBooked)
                     {
-                        cout<<"  "<<"Room is Not Available"<<endl;
-                        cout<<"  "<<"Penyewa :"<<infoFct(FctRel(R)).DataPenyewa<<endl;
+                        cout<<"\tRoom is Not Available"<<endl;
+                        cout<<"\tPenyewa :"<<infoFct(FctRel(R)).DataPenyewa<<endl;
                     }
                     else
                     {
-                        cout<<"Room Is Available"<<endl;
+                        cout<<"\tRoom Is Available"<<endl;
                     }
                     R = nextFctRel(R);
                 }
         }
         else
         {
-            cout<<"<EMPTY>";
+            cout<<"<EMPTY>\n";
         }
         P = nextFac(P);
     }
