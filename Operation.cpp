@@ -73,66 +73,38 @@ void Link(University &U, ListFacilities L, string idFac, string idFct)
 {
 
     adrFac P = firstFac(U);
-    bool trig = false;
-    while(P != NULL && !trig)
+    adrFac Fac = FindFacID(U,idFac);
+    adrFct Fct = FindFctID(L,idFct);
+    if(Fac == NULL && Fct == NULL)
     {
-        trig = CekConnection(U,L,IDFac(P),idFct);
-        P = nextFac(P);
-    }
-
-    if(!trig || 1>0) // the 1>0 is use for debugging
-    {
-        adrFac Fac = FindFacID(U,idFac);
-        adrFct Fct = FindFctID(L,idFct);
-        if(Fac == NULL && Fct == NULL)
-        {
-            cout<<"Error : Node Not Found \n";
-        }
-        else
-        {
-            adrFctRel R = AllocateRel(Fct);
-            insertRel(Facilities(Fac),R);
-            cout<<"Success \n";
-
-        }
+        cout<<"Error : Node Not Found \n";
     }
     else
     {
-        cout<<"Error link \n";
+        adrFctRel R = AllocateRel(Fct);
+        insertRel(Facilities(Fac),R);
+        cout<<"Success \n";
     }
+
 };
 
 bool CekConnection(University U, ListFacilities L, string idFac, string idFct)
 {
     adrFac Fac = FindFacID(U,idFac);
     adrFct Fct = FindFctID(L,idFct);
-    //the code below is similar with the main one, need but doesnt work fully (Hadi)
-    /*
-    if(Fac != NULL && Fct != NULL )
+    if(Fac == NULL && Fct == NULL )
     {
-        adrFctRel R = firstFctRel(Facilities(Fac));
-        if(R != NULL){ //the if is for debugging
-            while(R!=NULL)
-            {
-                if(Fct == FctRel(R));
-                {
-                    cout<<"Success Finding";
-                    return true;
-                }
-                R = nextFctRel(R);
-            }
-        }
-    }
-    return false;
-    */
-
-    if(Fac == NULL && Fct == NULL ){
         cout<<"Error : Connection does not exist \n";
         return false;
-    }else{
+    }
+    else
+    {
         adrFctRel R = firstFctRel(Facilities(Fac));
-        while(R!=NULL){
-            if(Fct == FctRel(R));{
+        while(R!=NULL)
+        {
+            if(Fct == FctRel(R))
+                ;
+            {
                 cout<<"Connection Found! \n";
                 return true;
             }
